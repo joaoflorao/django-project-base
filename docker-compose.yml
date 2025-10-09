@@ -6,6 +6,7 @@ services:
     ports:
       - "${DJANGO_PORT}:8000"
     environment:
+      - TINI_SUBREAPER=1
       - DJANGO_HOST=${DJANGO_HOST}
       - DJANGO_PORT=8000
       - POSTGRES_DB=${POSTGRES_DB}
@@ -14,6 +15,8 @@ services:
       - POSTGRES_HOST=${POSTGRES_HOST}
       - POSTGRES_PORT=${POSTGRES_PORT}
     command: ["sh", "-c", "python3 manage.py runserver $DJANGO_HOST:$DJANGO_PORT"]
+    volumes:
+      - .:/app
     init: true
     depends_on:
       - db
