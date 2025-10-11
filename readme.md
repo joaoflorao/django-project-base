@@ -11,7 +11,7 @@ projeto/
 ├── manage.py            # Utilizado para interagir com o projeto via linha de comando
 ├── requirements.txt     # Dependências do projeto
 │
-├── projeto/             # Diretório principal do projeto com as configurações globais
+├── core/                # Diretório principal do projeto com as configurações globais
 │   ├── __init__.py      # Torna o diretório um pacote Python
 │   ├── settings.py      # Configurações gerais do projeto (DB, apps, middlewares etc.)
 │   ├── urls.py          # Arquivo principal de rotas/URLs do projeto
